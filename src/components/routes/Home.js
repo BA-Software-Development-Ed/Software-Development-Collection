@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default () => {
 	return (
@@ -22,19 +23,19 @@ const Header = () => {
 const Subjects = () => {
 	return (
 		<div className="subjects">
-			<Subject title="Tetsing" description="" image="" />
-			<Subject title="Artificial Intelligence" description="" image="" />
-			<Subject title="Databases" description="" image="" />
+			<Subject title="Tetsing" description="" image="" direct="/testing" />
+			<Subject title="Artificial Intelligence" description="" image="" direct="/artificial-intelligence" />
+			<Subject title="Databases" description="" image="" direct="/databases" />
 		</div>
 	);
 };
 
-const Subject = ({ title, description, image }) => {
+const Subject = ({ title, description, image, direct }) => {
 	return (
-		<div className="subject">
+		<Link to={direct} className="subject">
 			<span>{title}</span>
 			<img src={image} alt="img" height="20" />
-		</div>
+		</Link>
 	);
 };
 

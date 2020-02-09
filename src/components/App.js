@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../sass/App.scss';
 
 import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom';
@@ -9,11 +9,25 @@ import { NavigationBar, Footer } from './statics/StaticBundle';
 
 export default () => {
 	const [location, setLocation] = useState('');
+	const [repositories, setRepositories] = useState([]);
+
+	const getRepositories = async () => {
+		const url = 'https://api.github.com/orgs/BA-Software-Development-Ed/repos';
+		const reponse = await fetch(url);
+		const repositories = await reponse.json();
+		setRepositories(repositories);
+	};
+
+	console.log(repositories);
+
+	useEffect(() => {
+		getRepositories();
+	}, []);
 
 	return (
 		<div className="App">
 			<Router>
-				<NavigationBar />
+				<NavigationBar location={location} />
 				<Routes setLocation={setLocation} />
 				<Footer />
 			</Router>

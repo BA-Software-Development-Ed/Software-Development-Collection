@@ -7,3 +7,4 @@
 -   GitHub Pages
 -   Icon Animations
 -   Connect GitHub API
+-   add .fig file
