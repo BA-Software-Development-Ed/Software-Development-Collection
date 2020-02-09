@@ -1,2 +1,9 @@
-# Software-Development-Collection
-Web Application, React - Software Development Collection
+# Software Development
+
+### TODO
+
+-   React Router - Setup
+-   CSS Transiontion Group - Setup
+-   GitHub Pages
+-   Icon Animations
+-   Connect GitHub API
