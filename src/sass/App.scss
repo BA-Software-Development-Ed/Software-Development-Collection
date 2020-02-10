@@ -1,35 +1,105 @@
 .App {
-	text-align: center;
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-	width: 100vw;
-	box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    position: relative;
 }
+
 .navigation-bar {
-	color: white;
-	background-color: #07123b;
+    position: relative;
+    background-color: #07123b;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    padding: 15px;
+
+    &>* {
+        color: white;
+        text-decoration: none;
+        font-size: 0.8rem;
+    }
+
+    .target {
+        color: #00B2FF;
+    }
+
+    .indicator {
+        position: absolute;
+        bottom: 0;
+        height: 4px;
+        width: 100px;
+        background-color: #00B2FF;
+        border-radius: 2px;
+    }
 }
 
 .main {
-	flex: 1;
+    flex: 1;
+}
 
-	.header {
-		padding: 10px;
-		color: white;
-		background-color: #07123b;
-		h2,
-		h3 {
-			margin: 0;
-		}
-	}
+.main-content {
+    flex: 1;
+    height: 100%;
 
-	.description {
-		background-color: #e9eff1;
-	}
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .header {
+        padding: 40px;
+        color: white;
+        background-color: #07123b;
+
+        h2,
+        h3 {
+            margin: 0;
+        }
+
+        h2 {
+            color: #00B2FF;
+            font-size: 2em;
+            letter-spacing: 4px;
+        }
+    }
+
+    .description {
+        padding: 25px;
+        background-color: #f3f5f6;
+    }
 }
 
 .footer {
-	color: #e9eff1;
-	background-color: #131824;
+    color: #e9eff1;
+    background-color: #131824;
+}
+
+.subjects {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.subject {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+
+    &:nth-of-type(2) {
+        flex-direction: column-reverse;
+    }
+
+    span {
+        color: #07123b;
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    img {
+        height: 80px;
+        margin: 20px;
+    }
 }

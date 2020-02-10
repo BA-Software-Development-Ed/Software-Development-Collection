@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import DatabasesIcon from '../../assets/databases-icon.png';
+import AIIcon from '../../assets/ai-icon.png';
+import TestingIcon from '../../assets/testing-icon.png';
+import { Testing, Databases } from './RoutesBundle';
+
 export default () => {
 	return (
 		<div className="main-content home-content">
@@ -14,8 +19,8 @@ export default () => {
 const Header = () => {
 	return (
 		<div className="header">
-			<h2>Bachelor</h2>
-			<h3>Software Development</h3>
+			<h2>Software Development</h2>
+			<h3>Bachelor</h3>
 		</div>
 	);
 };
@@ -23,9 +28,9 @@ const Header = () => {
 const Subjects = () => {
 	return (
 		<div className="subjects">
-			<Subject title="Tetsing" description="" image="" direct="/testing" />
-			<Subject title="Artificial Intelligence" description="" image="" direct="/artificial-intelligence" />
-			<Subject title="Databases" description="" image="" direct="/databases" />
+			<Subject title="Tetsing" description="" image={TestingIcon} direct="/testing" />
+			<Subject title="Artificial Intelligence" description="" image={AIIcon} direct="/artificial-intelligence" />
+			<Subject title="Databases" description="" image={DatabasesIcon} direct="/databases" />
 		</div>
 	);
 };
@@ -34,7 +39,7 @@ const Subject = ({ title, description, image, direct }) => {
 	return (
 		<Link to={direct} className="subject">
 			<span>{title}</span>
-			<img src={image} alt="img" height="20" />
+			<img src={image} alt="img" />
 		</Link>
 	);
 };
@@ -49,9 +54,7 @@ const Description = () => {
 				erhvervsakademiuddannelser og professionsbacheloruddannelser’ by the Danish institutions of higher
 				education approved to offer the particular programme.
 			</p>
-			<a href="https://www.cphbusiness.dk/media/78342/pba_soft_cba_curriculum_2017.pdf">
-				Software Development Curriculum
-			</a>
+			<a href="https://www.cphbusiness.dk/media/78342/pba_soft_cba_curriculum_2017.pdf">Show Document</a>
 		</div>
 	);
 };
